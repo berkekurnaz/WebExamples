@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Javascript İle Tyt Puan Hesaplama</title>
+    </head>
+    <body>
+        
+        <h2 style="color: #ff6a00;font-size: 25px;font-family: 'Arial Rounded MT';text-align: center;">TYT Puan Hesapla:</h2><br>
+
+            <form name="tythesapla">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="font-size: 20px;text-align: center;font-family: Calibri;">Doğru Sayısı</td>
+                        <td></td>
+                        <td style="font-size: 20px;text-align: center;font-family: Calibri;">Yanlış Sayısı</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;font-family: Calibri;">Türkçe :&nbsp </td>
+                        <td><input type="number" name="tdogru" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                        <td>&nbsp</td>
+                        <td><input type="number" name="tyanlis" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;font-family: Calibri;">Matematik :&nbsp </td>
+                        <td><input type="number" name="mdogru" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                        <td>&nbsp</td>
+                        <td><input type="number" name="myanlis" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;font-family: Calibri;">Fen :&nbsp </td>
+                        <td><input type="number" name="fdogru" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                        <td>&nbsp</td>
+                        <td><input type="number" name="fyanlis" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px;font-family: Calibri;">Sosyal :&nbsp </td>
+                        <td><input type="number" name="sdogru" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                        <td>&nbsp</td>
+                        <td><input type="number" name="syanlis" style="border: 1px solid black;margin-left: 10px;margin-bottom: 10px;text-align: center;"/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Hesapla" id="btnhesap" onclick="hesapla()" style="font-size: 20px;background-color: #ffd800;text-align: center;border: 2px solid #808080;"/></td>
+                    </tr>
+                </table>
+            </form>
+
+            <br>
+            <form name="sonuc">
+                <table>
+                    <tr>
+                        <td style="text-align: center;">Türkçe Net Sayısı &nbsp</td>
+                        <td style="text-align: center;">Matematik Net Sayısı &nbsp</td>
+                        <td style="text-align: center;">Fen Net Sayısı &nbsp</td>
+                        <td style="text-align: center;">Sosyal Net Sayısı &nbsp</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="tnet" disabled="disabled" style="background-color: #ffd800;text-align: center;color: #fff;margin-left: 10px;"/></td>
+                        <td><input type="text" name="mnet" disabled="disabled" style="background-color: #ffd800;text-align: center;color: #fff;margin-left: 10px;"/></td>
+                        <td><input type="text" name="fnet" disabled="disabled" style="background-color: #ffd800;text-align: center;color: #fff;margin-left: 10px;"/></td>
+                        <td><input type="text" name="snet" disabled="disabled" style="background-color: #ffd800;text-align: center;color: #fff;margin-left: 10px;"/></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><br>TYT Puan: &nbsp</td>
+                        <td><br><input type="number" disabled="disabled" name="tytpuan" style="background-color: #47bcca;text-align: center;color: #fff;font-size: 20px;"/></td>
+                    </tr>
+                </table>
+            </form>
+
+            <script type="text/javascript" language="javascript">
+                function hesapla() {
+                    var tdogru = document.tythesapla.tdogru.value;
+                    var tyanlis = document.tythesapla.tyanlis.value;
+                    var tnet = tdogru - (tyanlis / 4);
+                    
+
+                    var mdogru = document.tythesapla.mdogru.value;
+                    var myanlis = document.tythesapla.myanlis.value;
+                    var mnet = mdogru - (myanlis / 4);
+                    
+
+                    var fdogru = document.tythesapla.fdogru.value;
+                    var fyanlis = document.tythesapla.fyanlis.value;
+                    var fnet = fdogru - (fyanlis / 4);
+                    
+
+                    var sdogru = document.tythesapla.sdogru.value;
+                    var syanlis = document.tythesapla.syanlis.value;
+                    var snet = sdogru - (syanlis / 4);
+                    
+
+                    tytpuan = 0 + ((tnet * 100) / 33) + ((snet * 100) / 17) + ((mnet * 100) / 33) + ((fnet * 100) / 17);
+                  
+
+                    if (tnet > 40 || mnet > 40 || snet > 20 || fnet > 20) {
+                        alert("Hatalı Giriş Yapıldı...");
+                    }
+                    else
+                    {
+                        document.sonuc.tnet.value = tnet;
+                        document.sonuc.mnet.value = mnet;
+                        document.sonuc.fnet.value = fnet;
+                        document.sonuc.snet.value = snet;
+                        document.sonuc.tytpuan.value = tytpuan;
+                    }
+                }
+            </script>
+
+    </body>
+</html>
