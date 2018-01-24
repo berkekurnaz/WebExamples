@@ -1,0 +1,95 @@
+<!DOCTYPE html>   <!--HTML,CSS ve Javascript Kullanarak Duyuru Ekranı Yapımı...-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Duyuru Kutusu</title> <!--www.berkekurnaz.com-->
+
+        <style>
+            
+            .duyuru-ekran {
+                width: 300px;
+                height: 120px;
+                background-color: #ffd800;
+                position: fixed;
+                right: 20px;
+                display: inline-block;
+                border-radius: 10px;
+                text-align: center;
+            }
+            
+            .baslik {
+                font-size: 30px;
+                font-family: 'Agency FB';
+                color: #3b1fe9;
+            }
+            
+            .duyuru {
+                font-size: 18px;
+                font-family: Calibri;
+            }
+            
+            .kapat-buton {
+                font-size: 20px;
+                font-family: 'Agency FB';
+                background-color: #f00;
+                border-radius: 10px;
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 10px;
+                color: #fff;
+                transition: 0.3s;
+            }
+            
+            .kapat-buton:hover {
+                font-size: 25px;
+                font-family: 'Agency FB';
+                background-color: #efefef;
+                border-radius: 10px;
+                width: 110px;
+                height: 35px;
+                line-height: 35px;
+                margin-right: 10px;
+                color: #000;
+                cursor: pointer;
+                border: 1px solid black;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+            
+            a:hover {
+                text-decoration: none;
+                color: #000;
+            }
+            
+
+            
+        </style>
+
+    </head>
+    <body>
+
+        <script>
+            function hide(id){
+		    var divObject=document.getElementById(id);
+		    divObject.style.display="none";
+	        }
+
+
+        </script>
+        
+        <div id="gizle" class="duyuru-ekran">
+        
+            <span class="baslik">Duyuru Sayfası</span> <br>
+            <span class="duyuru">Bu bir duyuru yazısıdır.Burada duyuru bulunmaktadır...</span>
+
+            <center><div class="kapat-buton"><a href="javascript:hide('gizle')">Kapat</a></div></center>
+        
+        </div>
+        
+    </body>
+</html>
